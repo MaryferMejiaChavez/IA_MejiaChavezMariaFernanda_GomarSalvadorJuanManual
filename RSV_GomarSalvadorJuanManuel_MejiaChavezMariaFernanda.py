@@ -3,9 +3,7 @@
 #          Mejía Chávez María Fernanda      #
 #############################################
 
-#Ejercicio de clase
-
-Def = [
+Tin = [
         ("tortuga","garras"),
         ("tortuga","Proteccion queratina"),
         ("gallo","garras"),
@@ -17,129 +15,134 @@ Def = [
         ("gato","g. mamarias"),
         ("gato","pelo"),
         ("gato","garras"),
-        ("ballena","g. mamarias"),
-        ("ballena","pelo"),
         ("oso","g. mamarias"),
         ("oso","pelo"),
         ("oso","garras"),
+        ("ballena","g. mamarias"),
+        ("ballena","pelo"),
         ("delfin","g. mamarias")
         ]
 Viv = [
         ("tortuga","agua"),
-        ("gallo","tierra"),
         ("cocodrilo","agua"),
-        ("iguana","tierra"),
-        ("gato","tierra"),
         ("ballena","agua"),
-        ("oso","tierra"),
-        ("delfin","agua")
+        ("delfin","agua"),
+        ("tortuga","tierra"),
+        ("iguana","tierra"),
+        ("gallo","tierra"),
+        ("gato","tierra"),
+        ("oso","tierra")
        ]
 
 Ser = [
-        ("tortuga","sauropsida"),
-        ("gallo","sauropsida"),
-        ("cocodrilo","sauropsida"),
-        ("iguana","sauropsida"),
+        ("tortuga","Sauropsido"),
+        ("gallo","Sauropsido"),
+        ("cocodrilo","Sauropsido"),
+        ("iguana","Sauropsido"),
         ("gato","mammalia"),
         ("ballena","mammalia"),
         ("oso","mammalia"),
         ("delfin","mammalia"),
+
         ("mammalia","viviparo"),
         ("viviparo","tetrapodo"),
-        ("sauropsida","oviparo"),
+        ("Sauropsido","oviparo"),
         ("oviparo","tetrapodo"),
         ("tetrapodo","vertebrado")
        ]
 
 
-
-def Tiene(A,B,De):
-    if not De:
+def Tiene(A,B,Ti):
+    if not Ti:
         return False
-    c = 0
-    f = len(De)
-    while c < f:
-        if De[c][0] == A and De[c][1] == B:
+    i = 0
+    f = len(Ti)
+    while i < f:
+        if Ti[i][0] == A and Ti[i][1] == B:
             return True
-        c = c + 1
+        i = i + 1
     else:
         return False
 
 def Vive(A,B,Vi):
     if not Vi:
         return False
-    c = 0
+    i = 0
     f = len(Vi)
-    while c < f:
-        if Vi[c][0] == A and Vi[c][1] == B:
+    while i < f:
+        if Vi[i][0] == A and Vi[i][1] == B:
             return True
-        c = c + 1
+        i = i + 1
     else:
         return False
                         
 def Es(A,B,Se):
     if not Se:
         return False
-    c = 0
+    i = 0
     f = len(Se)
-    while c < f:
-        if Se[c][0] == A:
-            if Se[c][1] == B:
+    while i < f:
+        if Se[i][0] == A:
+            if Se[i][1] == B:
                 return True
             else:
-                A = Se[c][1]
-                c = -1
-        c = c + 1
+                A = Se[i][1]
+                i = -1
+        i = i + 1
     else:
         return False
   
-print (Tiene("araña","pelo",Def))
+print (Tiene("cocodrilo","pelo",Tin))
 print (Vive("gallo","agua",Viv))
+print (Vive("tortuga","tierra",Viv))
 print (Es("mammalia","oviparo",Ser))
-print (Tiene("gato","garras",Def))
+print (Tiene("gato","garras",Tin))
 print (Vive("tortuga","agua",Viv))
 print (Es("mammalia","tetrapodo",Ser))
 
-###########################################################################
-#Funciona solo si el proceso es igual para cada comparacion               #
-###########################################################################
 def esta(A,B,Vi):
     if not Vi:
         return False
-    c = 0
+    i = 0
     f = len(Vi)
-    while c < f:
-        if Vi[c][0] == A and Vi[c][1] == B:
+    while i < f:
+        if Vi[i][0] == A and Vi[i][1] == B:
             return True
-        c = c + 1
+        i = i + 1
     else:
         return False
-def dato1(A):
-    def dato2(B):
+def op1(A):
+    def op2(B):
         def lista(Vi):
             return esta(A,B,Vi)
         return lista
-    return dato2
+    return op2
     
-###########################################
 #          wrappers                       #
-###########################################
 
+def Vive():
+    return op1("tortuga")("agua")(Viv)
+print("La tortuga vive en agua")
+print(Vive())
 def Tiene():
-    return dato1("araña")("pelo")(Def)
+    return op1("cocodrilo")("pelo")(Tin)
+print("El cocodrilo tiene pelo")
 print(Tiene())
 def Vive():
-    return dato1("gallo")("agua")(Viv)
+    return op1("gallo")("agua")(Viv)
+print("El gallo vive en el agua")
+print(Vive())
+def Tiene():
+    return op1("gato")("garras")(Tin)
+print("El gallo tiene garras")
+print(Tiene())
+def Vive():
+    return op1("tortuga")("tierra")(Viv)
+print("La tortuga vive en tierra [algunas especies]")
 print(Vive())
 def Es():
-    return dato1("mammalia")("oviparo")(Ser)
+    return op1("oviparo")("tetrapodo")(Ser)
 print(Es())
-def Tiene():
-    return dato1("gato")("garras")(Def)
-print(Tiene())
-def Vive():
-    return dato1("tortuga")("agua")(Viv)
-print(Vive())
 def Es():
-    return dato1("oviparo")("tetrapodo")(Ser)
+    return op1("mammalia")("oviparo")(Ser)
 print(Es())
