@@ -1,0 +1,46 @@
+{
+	"Conocimiento" : [
+		["tortuga","Tiene","garras"],
+        ["tortuga","Tiene","Proteccion queratina"],
+        ["gallo","Tiene","garras"],
+        ["gallo","Tiene","Proteccion queratina"],
+        ["cocodrilo","Tiene","garras"],
+        ["cocodrilo","Tiene","Proteccion queratina"],
+        ["iguana","Tiene","garras"],
+        ["iguana","Tiene","Proteccion queratina"],
+        ["gato","Tiene","g. mamarias"],
+        ["gato","Tiene","pelo"],
+        ["gato","Tiene","garras"],
+        ["ballena","Tiene","g. mamarias"],
+        ["ballena","Tiene","pelo"],
+        ["oso","Tiene","g. mamarias"],
+        ["oso","Tiene","pelo"],
+        ["oso","Tiene","garras"],
+        ["delfin","Tiene","g. mamarias"],
+        
+		["tortuga","Vive","agua"],
+		["tortuga","Vive","tierra"],
+        ["gallo","Vive","tierra"],
+        ["cocodrilo","Vive","agua"],
+        ["iguana","Vive","tierra"],
+        ["gato","Vive","tierra"],
+        ["ballena","Vive","agua"],
+        ["oso","Vive","tierra"],
+        ["delfin","Vive","agua"],
+        
+		["tortuga","Es","sauropsida"],
+        ["gallo","Es","sauropsida"],
+        ["cocodrilo","Es","sauropsida"],
+        ["iguana","Es","sauropsida"],
+        ["gato","Es","mammalia"],
+        ["ballena","Es","mammalia"],
+        ["oso","Es","mammalia"],
+        ["delfin","Es","mammalia"],
+        ["mammalia","Es","viviparo"],
+        ["viviparo","Es","tetrapodo"],
+        ["sauropsida","Es","oviparo"],
+        ["oviparo","Es","tetrapodo"],
+        ["tetrapodo","Es","vertebrado"]
+		]
+}
+
