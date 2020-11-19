@@ -5,7 +5,9 @@
 
 print('#----- R E I N A S-------#')
 print()
+
 matriz =[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+#guarda posicion 
 posAct=[]
 llave = 0
 
@@ -45,7 +47,7 @@ def entrada(num_reinas, matriz, llave,posiciones):
             print(llave)
             for i in contened:
                 print(i)
-            nreinas = 4
+            num_reinas=4
             llave=0
             return entrada(num_reinas,contened,llave,posiciones)
         if llave == 0:
@@ -106,7 +108,7 @@ def iterar(matriz,posAct):
     print("############")
     return matriz
     
-#caso especial
+
 def solucion(matriz):
     for i in range(len(matriz)):
         for r in range(len(matriz[i])):
